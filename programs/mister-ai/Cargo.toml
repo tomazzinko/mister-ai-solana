@@ -9,8 +9,6 @@ crate-type = ["cdylib", "lib"]
 name = "mister_ai"
 
 [features]
-default = []
-cpi = ["no-entrypoint"]
 no-entrypoint = []
 no-idl = []
 no-log-ix-name = []
