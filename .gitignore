@@ -5,3 +5,6 @@ target
 node_modules
 test-ledger
 .yarn
+
+# localnet keypair
+mister-ai-keypair.json

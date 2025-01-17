@@ -1,0 +1,24 @@
+{
+    "name": "mister-ai-agent",
+    "version": "1.0.0",
+    "description": "Mister AI agent for the Mister AI game",
+    "main": "src/index.ts",
+    "scripts": {
+        "start": "ts-node src/index.ts",
+        "dev": "nodemon src/index.ts",
+        "build": "tsc"
+    },
+    "dependencies": {
+        "@solana/web3.js": "^1.91.0",
+        "@project-serum/anchor": "^0.26.0",
+        "dotenv": "^16.0.3",
+        "express": "^4.18.2"
+    },
+    "devDependencies": {
+        "@types/express": "^4.17.17",
+        "@types/node": "^18.15.11",
+        "nodemon": "^2.0.22",
+        "ts-node": "^10.9.1",
+        "typescript": "^5.0.4"
+    }
+}

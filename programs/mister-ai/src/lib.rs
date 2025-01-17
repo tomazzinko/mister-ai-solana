@@ -1,10 +1,10 @@
 use anchor_lang::prelude::*;
 use anchor_lang::solana_program::system_program;
 
-declare_id!("HwKzcL5wbjbS14mzZa1oFC7oSyK87c9htvfrTs7Eq8X1");
+declare_id!("Hm4UThjiWe5xdQ6ezkmReuZZ9Wn628WDoQ1d9mAxpBmp");
 
 #[program]
-pub mod mr_ai {
+pub mod mister_ai {
     use super::*;
 
     pub fn create_game(ctx: Context<CreateGame>) -> Result<()> {
@@ -142,7 +142,13 @@ pub enum MisterAiError {
 // -------------------------- Accounts --------------------------
 #[derive(Accounts)]
 pub struct CreateGame<'info> {
-    #[account(mut)]
+    #[account(
+        init,
+        payer = payer,
+        space = 8 + std::mem::size_of::<GameState>(),
+        seeds = [b"game_state"],
+        bump
+    )]
     pub game_state: Account<'info, GameState>,
     #[account(mut)]
     pub payer: Signer<'info>,
