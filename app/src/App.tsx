@@ -1,24 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Map from './components/Map';
 
 function App() {
+  const [currentLocation, setCurrentLocation] = useState(0);
+
+  const handleCityClick = (cityId: number) => {
+    setCurrentLocation(cityId);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Find Mister AI</h1>
+      <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+        <Map currentLocation={currentLocation} onCityClick={handleCityClick} />
+      </div>
     </div>
   );
 }
